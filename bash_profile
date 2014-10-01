@@ -3,3 +3,4 @@ export CLICOLOR=xterm-256color
 unalias rm 2>/dev/null
 export MANPATH=$HOME/share/man:$MANPATH
 export GREP_OPTIONS=-I
+export TMOUT=0
