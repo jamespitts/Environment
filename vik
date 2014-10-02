@@ -12,10 +12,12 @@ then
 fi
 
 f=($(find . -name $1))
-fname=${fn[0]}
+fname=${f[0]}
 
-if [ ${#f[*]} -gt 1 -a -z "$2" ]
+numfiles=${#f[*]}
+if [ $numfiles -gt 1 -a -z "$2" ]
 then
+  echo Files
   a=0
   for i in ${f[*]}
   do
@@ -23,8 +25,15 @@ then
     echo $a - $i
   done
   exit $a
-else
-  fname=${f[(($2-1))]}
+elif [ $numfiles -gt 1 ]
+then
+  fname=${f[(($numfiles-1))]}
+fi
+
+if [ ! -f "$fname" ]
+then
+    echo $fname not found.
+    exit 1
 fi
 
 echo $fname
