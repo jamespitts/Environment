@@ -1,0 +1,8 @@
+vik_complete()
+{
+        cur=${COMP_WORDS[COMP_CWORD]}
+        local f=$(find . -type f -name $cur\* -a \( -regex '.*\.cpp$' -o -regex '.*\.h$' \) -exec basename {} \;)
+        COMPREPLY=($f)
+}
+
+complete -F vik_complete vik
