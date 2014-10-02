@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ -f $1 ]
+then
+  vim $1
+  exit $?
+fi
+
+if [ $# -eq 0 ]
+then
+        exit
+fi
+
+f=($(find . -name $1))
+fname=${fn[0]}
+
+if [ ${#f[*]} -gt 1 -a -z "$2" ]
+then
+  a=0
+  for i in ${f[*]}
+  do
+    ((a=a+1))
+    echo $a - $i
+  done
+  exit $a
+else
+  fname=${f[(($2-1))]}
+fi
+
+echo $fname
+
+vim $fname
