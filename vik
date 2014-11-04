@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f $1 ]
+if [ -f $1 -a -z "$2" ]
 then
   vim $1
   exit $?
@@ -27,7 +27,7 @@ then
   exit $a
 elif [ $numfiles -gt 1 ]
 then
-  fname=${f[(($numfiles-1))]}
+  fname=${f[$(($2-1))]}
 fi
 
 if [ ! -f "$fname" ]
