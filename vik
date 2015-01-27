@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# (c) 2014-15 James Pitts 
 if [ -f $1 -a -z "$2" ]
 then
   vim $1
