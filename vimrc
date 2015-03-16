@@ -11,3 +11,7 @@ autocmd BufRead,BufWinEnter * if &ft!='qf' | let &l:modifiable = (&readonly ? 0 
 set nowrap
 
 set nohlsearch
+
+
+set cindent
+set cinoptions=g0
