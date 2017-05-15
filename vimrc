@@ -14,6 +14,6 @@ set nohlsearch
 
 
 set cindent
-set cinoptions=g0N-s(0
+set cinoptions=t0g0N-s(0
 
 nnoremap @b :!make<CR>
